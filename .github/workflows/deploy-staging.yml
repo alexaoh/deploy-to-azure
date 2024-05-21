@@ -1,4 +1,4 @@
-name: Stage the app
+name: Deploy to staging
 
 on:
   pull_request:
@@ -21,7 +21,7 @@ jobs:
           node-version: 16
       - name: npm install and build webpack
         run: |
-          npm install
+          npm install --force
           npm run build
       - uses: actions/upload-artifact@v4
         with:
